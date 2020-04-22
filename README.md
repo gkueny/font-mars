@@ -2,7 +2,7 @@
   Font-Mars site
 </h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/04a78e6b-0425-4d3f-a1d9-f20bf733e813/deploy-status)](https://app.netlify.com/sites/font-mars/deploys)
+<center>[![Netlify Status](https://api.netlify.com/api/v1/badges/04a78e6b-0425-4d3f-a1d9-f20bf733e813/deploy-status)](https://app.netlify.com/sites/font-mars/deploys)</center>
 
 ## 🚀 Quick start
 
