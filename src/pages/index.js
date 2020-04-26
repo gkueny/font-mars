@@ -1,44 +1,26 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
-import Bio from "../components/bio";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import SEO from "../components/Seo";
+import Hero from "../components/Hero";
+import Wines from "../components/Wines";
 
-const BlogIndex = ({ data, location }) => {
+const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
+  const headerImage = data.headerImage;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug;
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3>
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        );
-      })}
+      <SEO />
+      <Hero image={headerImage} alt="Vignes de Font-Mars">
+        <h2 className="absolute text-7xl text-white">Domaine Font-Mars</h2>
+      </Hero>
+      <Wines />
     </Layout>
   );
 };
 
-export default BlogIndex;
+export default Home;
 
 export const pageQuery = graphql`
   query {
@@ -47,17 +29,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
+    headerImage: file(absolutePath: { regex: "/home-header.jpg/" }) {
+      childImageSharp {
+        fluid(maxWidth: 1960, maxHeight: 1305) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

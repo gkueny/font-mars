@@ -5,12 +5,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
-  const result = await graphql(
+  const winePage = path.resolve(`./src/templates/WineTemplate.js`);
+
+  const resultBlog = await graphql(
     `
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
+          filter: { fileAbsolutePath: { regex: "/news/" } }
         ) {
           edges {
             node {
@@ -27,12 +30,35 @@ exports.createPages = async ({ graphql, actions }) => {
     `
   );
 
-  if (result.errors) {
-    throw result.errors;
+  const resultWines = await graphql(
+    `
+      {
+        allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/wine/" } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+
+  if (resultBlog.errors) {
+    throw resultBlog.errors;
+  }
+
+  if (resultWines.errors) {
+    throw resultWines.errors;
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = resultBlog.data.allMarkdownRemark.edges;
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
@@ -45,6 +71,18 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
         previous,
         next,
+      },
+    });
+  });
+
+  const wines = resultWines.data.allMarkdownRemark.edges;
+
+  wines.forEach((wine, index) => {
+    createPage({
+      path: wine.node.fields.slug,
+      component: winePage,
+      context: {
+        slug: wine.node.fields.slug,
       },
     });
   });

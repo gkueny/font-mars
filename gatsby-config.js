@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Font-Mars`,
+    title: `Domaine Font-Mars`,
     author: {
       name: `Jean-Baptiste de Clock`,
     },
@@ -20,6 +20,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/wines/`,
+        name: `wines`,
       },
     },
     {
@@ -51,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Font-Mars`,
+        name: `Domaine Font-Mars`,
         short_name: `Font-Mars`,
         start_url: `/`,
         background_color: `#ffffff`,
@@ -61,5 +68,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-postcss`,
   ],
 };
