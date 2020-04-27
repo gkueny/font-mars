@@ -25,16 +25,16 @@ const Commentary = ({ commentary }) => {
           ></Image>
         </div>
         <div>
-          <h2 class="text-gray-800 text-3xl font-semibold leading-8">
+          <h2 class="text-gray-800 text-xl font-semibold leading-8 lg:text-3xl">
             Commentaire de dégustation
           </h2>
-          <p class="mt-2 text-gray-700">
+          <div class="mt-2 text-gray-700">
             <ul>
               {commentary.split(". ").map((commentarySplitted) => (
                 <li>{commentarySplitted}.</li>
               ))}
             </ul>
-          </p>
+          </div>
         </div>
         <div class="flex justify-end mt-4">
           <span class="text-md font-medium">Jean-Baptiste de Clock</span>
