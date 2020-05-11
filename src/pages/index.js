@@ -17,6 +17,11 @@ const Home = ({ data, location }) => {
           <h2 className="relative break-words">Domaine Font-Mars</h2>
         </div>
       </Hero>
+
+      <h2 className="text-center text-4xl font-bold leading-10 p-24">
+        NOS VINS
+      </h2>
+
       <Wines />
     </Layout>
   );

@@ -55,7 +55,6 @@ const Wines = () => {
   return (
     <section>
       <div className="flex flex-col max-w-screen-xl m-auto p-2 items-center">
-        <h2 className="text-4xl font-bold leading-10 p-10">NOS VINS</h2>
         <div className="flex w-full flex-wrap justify-center">
           <div className="glide">
             <div className="glide__track" data-glide-el="track">
