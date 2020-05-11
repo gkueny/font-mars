@@ -6,6 +6,10 @@
   height: calc(100vh - 101px);
 }
 
+.h-screen-adapt-2 {
+  height: calc(80vh - 101px);
+}
+
 .bg-gray-800-alpha {
   background-color: #2d374815;
 }

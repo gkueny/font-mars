@@ -64,7 +64,7 @@ export const pageQuery = graphql`
         commentary
         bottle {
           childImageSharp {
-            fixed(width: 330) {
+            fixed(width: 315) {
               ...GatsbyImageSharpFixed
             }
           }
