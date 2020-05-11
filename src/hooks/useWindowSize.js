@@ -3,14 +3,10 @@ import { useState, useEffect } from "react";
 const useWindowSize = () => {
   const isClient = typeof window === "object";
 
-  function getSize() {
-    return {
-      width: isClient ? window.innerWidth : undefined,
-      height: isClient ? window.innerHeight : undefined,
-    };
-  }
-
-  const [windowSize, setWindowSize] = useState(getSize);
+  const [windowSize, setWindowSize] = useState({
+    width: isClient ? window.innerWidth : undefined,
+    height: isClient ? window.innerHeight : undefined,
+  });
 
   useEffect(() => {
     if (!isClient) {
@@ -18,12 +14,15 @@ const useWindowSize = () => {
     }
 
     function handleResize() {
-      setWindowSize(getSize());
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
     }
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, [isClient]);
 
   return windowSize;
 };
