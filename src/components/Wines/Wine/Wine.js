@@ -1,12 +1,12 @@
 import React from "react";
-import { navigateTo } from "gatsby";
+import { navigate } from "gatsby";
 import Image from "gatsby-image";
 
 const Wine = ({ wine }) => {
   return (
     <div
       role="link"
-      onClick={() => navigateTo(wine.fields.slug)}
+      onClick={() => navigate(wine.fields.slug)}
       className="max-w-sm overflow-hidden px-6 w-full cursor-pointer"
     >
       <div className="rounded shadow mb-16 hover:shadow-lg">
