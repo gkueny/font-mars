@@ -5,9 +5,11 @@ const tileLayer =
   "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png";
 const attribution = `&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors`;
 
+const isClient = typeof window === "object";
+
 const Map = ({ width, height }) => {
-  if (typeof window === "undefined") {
-    return null;
+  if (!isClient) {
+    return <p className="text-gray-900 text-xl">Chargement de la carte...</p>;
   }
   return (
     <MapContainer
