@@ -37,6 +37,7 @@ const IllustratedText = ({
   imgFluid,
   inverted = false,
   height = 650,
+  background = null,
 }) => {
   const { width } = useWindowSize();
   const IS_MOBILE = width < MOBILE_MAX_WIDTH;
@@ -54,22 +55,27 @@ const IllustratedText = ({
         ></div>
       )}
       <section
-        className="relative max-w-screen-xl m-auto px-1 z-10 flex items-center h-auto py-12 lg:px-12 lg:py-12"
+        className="relative max-w-screen-xl m-auto px-1 z-10 flex items-center h-auto py-12 lg:px-12 lg:py-12 w-full"
         style={{
           height: !IS_MOBILE && `${height}px`,
         }}
       >
-        <article className="flex items-center flex-col h-full lg:flex-row lg:m-12">
+        <article className="flex items-center flex-col h-full lg:flex-row lg:m-12 w-full">
           {inverted && !IS_MOBILE && (
             <Text isMobile={IS_MOBILE} inverted={inverted}>
               {children}
             </Text>
           )}
-          <Illustration
-            isMobile={IS_MOBILE}
-            imgFluid={imgFluid}
-            inverted={inverted}
-          />
+          {background ? (
+            background
+          ) : (
+            <Illustration
+              isMobile={IS_MOBILE}
+              imgFluid={imgFluid}
+              inverted={inverted}
+            />
+          )}
+
           {(!inverted || IS_MOBILE) && (
             <Text isMobile={IS_MOBILE} inverted={inverted}>
               {children}
@@ -80,5 +86,7 @@ const IllustratedText = ({
     </>
   );
 };
+
+export { Text };
 
 export default IllustratedText;

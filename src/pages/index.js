@@ -13,7 +13,7 @@ const Home = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO />
       <Hero image={headerImage} alt="Vignes de Font-Mars">
-        <div className="absolute text-7xl text-white text-center">
+        <div className="absolute text-4xl text-white text-center lg:text-7xl">
           <h2 className="relative break-words">Domaine Font-Mars</h2>
         </div>
       </Hero>

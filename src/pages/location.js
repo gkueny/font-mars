@@ -5,12 +5,25 @@ import SEO from "../components/Seo";
 import Hero from "../components/Hero";
 import IllustratedText from "../components/IllustratedText";
 
+const ContactUs = () => (
+  <div className="flex items-center justify-center mt-8 lg:mt-0">
+    <a
+      href="mailto:locationfontmars@gmail.com"
+      class="absolute mt-12 bg-red-500 text-white active:bg-red-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 lg:mt-24"
+    >
+      Nous contacter
+    </a>
+  </div>
+);
+
 const Location = ({ data }) => {
   return (
     <Layout>
       <SEO title="Notre terroir" />
       <Hero type="2" image={data.headerImage} alt="Vignes de Font-Mars">
-        <h2 className="absolute text-7xl text-white">Privatiser Font-Mars</h2>
+        <h2 className="absolute text-4xl text-white lg:text-7xl">
+          Privatiser Font-Mars
+        </h2>
       </Hero>
 
       <IllustratedText
@@ -46,6 +59,7 @@ const Location = ({ data }) => {
           </a>
           , nous serons ravis d'étudier votre demande.
         </p>
+        <ContactUs />
       </IllustratedText>
 
       <IllustratedText imgFluid={data.repas.childImageSharp.fluid} height={800}>
@@ -91,6 +105,7 @@ const Location = ({ data }) => {
           </a>
           .
         </p>
+        <ContactUs />
       </IllustratedText>
     </Layout>
   );

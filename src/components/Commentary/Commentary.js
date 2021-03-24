@@ -17,18 +17,18 @@ const Commentary = ({ commentary }) => {
 
   return (
     <section className="relative m-auto z-30 max-w-lg px-8 lg:px-0 lg:m-0">
-      <div class="py-4 px-8 bg-white shadow-xl rounded-xl my-20 -mt-12 px-6 lg:mt-20">
-        <div class="flex justify-center md:justify-end -mt-16">
+      <div className="py-4 px-8 bg-white shadow-xl rounded-xl my-20 -mt-12 px-6 lg:mt-20">
+        <div className="flex justify-center md:justify-end -mt-16">
           <Image
             className="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
             fixed={data.avatar.childImageSharp.fixed}
           ></Image>
         </div>
         <div>
-          <h2 class="text-gray-800 text-xl font-semibold leading-8 lg:text-3xl">
+          <h2 className="text-gray-800 text-xl font-semibold leading-8 lg:text-3xl">
             Commentaire de dégustation
           </h2>
-          <div class="mt-2 text-gray-700">
+          <div className="mt-2 text-gray-700">
             <ul>
               {commentary.split(". ").map((commentarySplitted) => (
                 <li>{commentarySplitted}.</li>
@@ -36,8 +36,8 @@ const Commentary = ({ commentary }) => {
             </ul>
           </div>
         </div>
-        <div class="flex justify-end mt-4">
-          <span class="text-md font-medium">Jean-Baptiste de Clock</span>
+        <div className="flex justify-end mt-4">
+          <span className="text-md font-medium">Jean-Baptiste de Clock</span>
         </div>
       </div>
     </section>
