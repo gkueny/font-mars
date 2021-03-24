@@ -7,22 +7,16 @@ import Wines from "../components/Wines";
 
 const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const headerImage = data.headerImage;
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO />
-      <Hero image={headerImage} alt="Vignes de Font-Mars">
-        <div className="absolute text-7xl text-white text-center">
-          <h2 className="relative break-words">Domaine Font-Mars</h2>
-        </div>
+      <Hero type="2" image={data.headerImage} alt="Vignes de Font-Mars">
+        <h2 className="absolute text-7xl text-white">Nos vins</h2>
       </Hero>
-
-      <h2 className="text-center text-4xl font-bold leading-10 p-24">
-        NOS VINS
-      </h2>
-
-      <Wines />
+      <div className="pt-24">
+        <Wines />
+      </div>
     </Layout>
   );
 };
@@ -36,7 +30,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    headerImage: file(absolutePath: { regex: "/home-header.jpg/" }) {
+    headerImage: file(absolutePath: { regex: "/vignes-3.jpg/" }) {
       childImageSharp {
         fluid(maxWidth: 1960, maxHeight: 1305) {
           ...GatsbyImageSharpFluid
