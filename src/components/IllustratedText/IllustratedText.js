@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import useWindowSize from "../../hooks/useWindowSize";
 
 const MOBILE_MAX_WIDTH = 1024;
@@ -12,10 +12,10 @@ const Illustration = ({ imgFluid, inverted, isMobile }) => (
       height: isMobile && "20rem",
     }}
   >
-    <Image
+    <GatsbyImage
+      image={imgFluid}
       className="h-full w-full shadow-md rounded-md"
-      fluid={imgFluid}
-    ></Image>
+    ></GatsbyImage>
   </div>
 );
 

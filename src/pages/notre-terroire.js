@@ -8,7 +8,10 @@ const NotreTerroir = ({ data }) => {
   return (
     <Layout>
       <SEO title="Notre terroir" />
-      <IllustratedText imgFluid={data.image.childImageSharp.fluid} height={750}>
+      <IllustratedText
+        imgFluid={data.image.childImageSharp.gatsbyImageData}
+        height={750}
+      >
         <h2 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
           Notre terroir
         </h2>
@@ -50,12 +53,10 @@ const NotreTerroir = ({ data }) => {
 export default NotreTerroir;
 
 export const pageQuery = graphql`
-  query {
+  {
     image: file(absolutePath: { regex: "/vignes.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 536, maxHeight: 600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 536, height: 600, layout: CONSTRAINED)
       }
     }
   }

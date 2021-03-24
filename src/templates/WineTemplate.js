@@ -64,23 +64,17 @@ export const pageQuery = graphql`
         commentary
         bottle {
           childImageSharp {
-            fixed(width: 315) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(width: 315, layout: FIXED)
           }
         }
         background {
           childImageSharp {
-            fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 500, layout: CONSTRAINED)
           }
         }
         mobileBackground {
           childImageSharp {
-            fluid(maxWidth: 1023) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

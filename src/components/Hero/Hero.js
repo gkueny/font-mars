@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Hero = ({ image, alt, children, type }) => {
   const classNames =
@@ -36,11 +36,11 @@ const Hero = ({ image, alt, children, type }) => {
             : {}
         }
       >
-        <Image
+        <GatsbyImage
+          image={image.childImageSharp.gatsbyImageData}
           className={type === "2" ? classNamesImagesType2 : classNamesImages}
-          fluid={image.childImageSharp.fluid}
           alt={alt}
-        ></Image>
+        ></GatsbyImage>
         {type !== "2" && (
           <div className="absolute top-0 h-full w-full bg-gray-800-alpha"></div>
         )}

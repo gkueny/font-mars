@@ -61,12 +61,10 @@ const NousContacter = () => {
 export default NousContacter;
 
 export const pageQuery = graphql`
-  query {
+  {
     image: file(absolutePath: { regex: "/vignes.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 536, maxHeight: 600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 536, height: 600, layout: CONSTRAINED)
       }
     }
   }

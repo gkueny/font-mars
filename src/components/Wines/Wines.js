@@ -38,9 +38,11 @@ const Wines = () => {
               description
               image {
                 childImageSharp {
-                  fluid(maxHeight: 400, fit: COVER) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(
+                    height: 400
+                    transformOptions: { fit: COVER }
+                    layout: FULL_WIDTH
+                  )
                 }
               }
             }

@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Images = ({ background, bottle }) => {
   return (
@@ -12,7 +12,8 @@ const Images = ({ background, bottle }) => {
           background: "rgba(0, 0, 0, 0.25)",
         }}
       ></div>
-      <Image
+      <GatsbyImage
+        image={background.childImageSharp.gatsbyImageData}
         className="h-full"
         style={{
           width: "35%",
@@ -20,9 +21,9 @@ const Images = ({ background, bottle }) => {
           top: "1px",
           maxHeight: "998px",
         }}
-        fluid={background.childImageSharp.fluid}
-      ></Image>
-      <Image
+      ></GatsbyImage>
+      <GatsbyImage
+        image={bottle.childImageSharp.gatsbyImageData}
         style={{
           left: "calc(35% + 2vw)",
           height: "100%",
@@ -34,8 +35,7 @@ const Images = ({ background, bottle }) => {
           objectFit: "contain",
           zIndex: 10,
         }}
-        fixed={bottle.childImageSharp.fixed}
-      ></Image>
+      ></GatsbyImage>
     </>
   );
 };

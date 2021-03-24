@@ -1,6 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Phone = () => (
   <svg className="h-6 w-6 fill-current" viewBox="0 0 34.546 34.546">
@@ -19,9 +19,7 @@ const ContactCard = () => {
     query ContactCardQuery {
       contactAvatar: file(absolutePath: { regex: "/jean-baptiste.jpg/" }) {
         childImageSharp {
-          fixed(width: 128, height: 128) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 128, height: 128, layout: FIXED)
         }
       }
     }
@@ -31,10 +29,10 @@ const ContactCard = () => {
     <div className="w-full flex justify-center">
       <div className="w-full max-w-lg">
         <div className="flex align-center p-2">
-          <Image
+          <GatsbyImage
+            image={data.contactAvatar.childImageSharp.gatsbyImageData}
             className="w-32 h-32 rounded-full mx-auto"
-            fixed={data.contactAvatar.childImageSharp.fixed}
-          ></Image>
+          ></GatsbyImage>
         </div>
         <div className="p-2">
           <h3 className="text-center text-xl text-gray-900 font-medium leading-8">

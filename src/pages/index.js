@@ -30,7 +30,7 @@ const Home = ({ data, location }) => {
 export default Home;
 
 export const pageQuery = graphql`
-  query {
+  {
     site {
       siteMetadata {
         title
@@ -38,9 +38,7 @@ export const pageQuery = graphql`
     }
     headerImage: file(absolutePath: { regex: "/home-header.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 1960, maxHeight: 1305) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

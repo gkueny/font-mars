@@ -1,7 +1,7 @@
 import React from "react";
 import Markdown from "../../../components/Markdown";
 import Commentary from "../../../components/Commentary";
-import Image from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Title = ({ title }) => (
   <h2
@@ -44,10 +44,10 @@ const Description = ({
           >
             <Title title={title} />
           </div>
-          <Image
+          <GatsbyImage
+            image={mobileBackground.childImageSharp.gatsbyImageData}
             className="h-full w-full shadow-2xl rounded-lg"
             style={{ height: "50%", left: "1rem", width: "calc(100% - 2rem)" }}
-            fluid={mobileBackground.childImageSharp.fluid}
           />
         </>
       )}

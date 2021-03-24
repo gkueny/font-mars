@@ -9,7 +9,9 @@ const Histoire = ({ data }) => {
     <Layout>
       <SEO title="Histoire" />
 
-      <IllustratedText imgFluid={data.imageHistoire.childImageSharp.fluid}>
+      <IllustratedText
+        imgFluid={data.imageHistoire.childImageSharp.gatsbyImageData}
+      >
         <h2 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
           UN VRAI CHÂTEAU
         </h2>
@@ -32,7 +34,7 @@ const Histoire = ({ data }) => {
       </IllustratedText>
 
       <IllustratedText
-        imgFluid={data.imageFamille.childImageSharp.fluid}
+        imgFluid={data.imageFamille.childImageSharp.gatsbyImageData}
         inverted
         height={900}
       >
@@ -72,19 +74,15 @@ const Histoire = ({ data }) => {
 export default Histoire;
 
 export const pageQuery = graphql`
-  query {
+  {
     imageHistoire: file(absolutePath: { regex: "/chateau.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 536, maxHeight: 600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 536, height: 600, layout: CONSTRAINED)
       }
     }
     imageFamille: file(absolutePath: { regex: "/jean-baptiste.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 536, maxHeight: 600) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 536, height: 600, layout: CONSTRAINED)
       }
     }
   }

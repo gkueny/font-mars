@@ -27,7 +27,7 @@ const Location = ({ data }) => {
       </Hero>
 
       <IllustratedText
-        imgFluid={data.piscine.childImageSharp.fluid}
+        imgFluid={data.piscine.childImageSharp.gatsbyImageData}
         inverted
         height={700}
       >
@@ -62,7 +62,10 @@ const Location = ({ data }) => {
         <ContactUs />
       </IllustratedText>
 
-      <IllustratedText imgFluid={data.repas.childImageSharp.fluid} height={800}>
+      <IllustratedText
+        imgFluid={data.repas.childImageSharp.gatsbyImageData}
+        height={800}
+      >
         <h3 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
           LOCATION SAISONNIÈRE
         </h3>
@@ -114,26 +117,20 @@ const Location = ({ data }) => {
 export default Location;
 
 export const pageQuery = graphql`
-  query {
+  {
     headerImage: file(absolutePath: { regex: "/chateau.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 1960, maxHeight: 1305) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     piscine: file(absolutePath: { regex: "/font-mars-location-picine.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 536) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(width: 536, layout: CONSTRAINED)
       }
     }
     repas: file(absolutePath: { regex: "/font-mars-location-repas.jpg/" }) {
       childImageSharp {
-        fluid(maxWidth: 1024) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }
