@@ -21,6 +21,7 @@ const Images = ({ background, bottle }) => {
           top: "1px",
           maxHeight: "998px",
         }}
+        alt=""
       ></GatsbyImage>
       <GatsbyImage
         image={bottle.childImageSharp.gatsbyImageData}
@@ -35,6 +36,7 @@ const Images = ({ background, bottle }) => {
           objectFit: "contain",
           zIndex: 10,
         }}
+        alt=""
       ></GatsbyImage>
     </>
   );

@@ -6,8 +6,8 @@ const Layout = ({ children }) => {
     <div className="layout">
       <Header />
       <main
-        className="relative"
-        style={{ overflowY: "scroll", height: "calc(100vh - 101px)" }}
+        className="relative h-screen-adapt"
+        style={{ overflowY: "scroll", paddingBottom: "50px" }}
       >
         {children}
       </main>

@@ -14,6 +14,7 @@ const Wine = ({ wine }) => {
           image={wine.frontmatter.image.childImageSharp.gatsbyImageData}
           className="w-full rounded-t"
           style={{ height: "25rem" }}
+          alt={wine.frontmatter.title}
         ></GatsbyImage>
         <div className="px-6 py-4 text-center">
           <h3 className="font-bold text-xl mb-2">{wine.frontmatter.title}</h3>

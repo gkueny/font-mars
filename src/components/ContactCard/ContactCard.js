@@ -30,6 +30,7 @@ const ContactCard = () => {
       <div className="w-full max-w-lg">
         <div className="flex align-center p-2">
           <GatsbyImage
+            alt="Jean-Baptiste de Clock"
             image={data.contactAvatar.childImageSharp.gatsbyImageData}
             className="w-32 h-32 rounded-full mx-auto"
           ></GatsbyImage>
@@ -60,7 +61,7 @@ const ContactCard = () => {
           <div className="flex items-center justify-center mt-8 lg:mt-0">
             <a
               href="mailto:infos@font-mars.com"
-              class="absolute mt-12 bg-red-500 text-white active:bg-red-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 lg:mt-28"
+              className="absolute mt-12 bg-red-500 text-white active:bg-red-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 lg:mt-28"
             >
               Nous contacter
             </a>

@@ -48,6 +48,7 @@ const Description = ({
             image={mobileBackground.childImageSharp.gatsbyImageData}
             className="h-full w-full shadow-2xl rounded-lg"
             style={{ height: "50%", left: "1rem", width: "calc(100% - 2rem)" }}
+            alt=""
           />
         </>
       )}

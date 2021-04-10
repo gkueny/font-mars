@@ -15,6 +15,7 @@ const Illustration = ({ imgFluid, inverted, isMobile }) => (
     <GatsbyImage
       image={imgFluid}
       className="h-full w-full shadow-md rounded-md"
+      alt=""
     ></GatsbyImage>
   </div>
 );

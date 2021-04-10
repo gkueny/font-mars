@@ -60,18 +60,6 @@ const Header = () => {
               Histoire
             </Link>
             <Link
-              to="/newsletter"
-              className="block m-4 text-center lg:inline-block text-gray-800 hover:font-semibold"
-            >
-              Actualités
-            </Link>
-            <Link
-              to="/galerie"
-              className="block m-4 text-center lg:inline-block text-gray-800 hover:font-semibold"
-            >
-              Galerie
-            </Link>
-            <Link
               to="/location"
               className="block m-4 text-center lg:inline-block text-gray-800 hover:font-semibold"
             >

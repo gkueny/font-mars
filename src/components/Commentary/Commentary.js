@@ -18,6 +18,7 @@ const Commentary = ({ commentary }) => {
       <div className="py-4 px-8 bg-white shadow-xl rounded-xl my-20 -mt-12 px-6 lg:mt-20">
         <div className="flex justify-center md:justify-end -mt-16">
           <GatsbyImage
+            alt="Jean-Baptiste de Clock"
             image={data.avatar.childImageSharp.gatsbyImageData}
             className="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
           ></GatsbyImage>

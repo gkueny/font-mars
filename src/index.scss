@@ -5,7 +5,14 @@
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
 .h-screen-adapt {
-  height: calc(100vh - 101px);
+  height: calc(100vh - 78px);
+}
+
+@media  (min-width: 1024px) {
+  .h-screen-adapt {
+    height: calc(100vh - 104px);
+  }
+  /* ... */
 }
 
 .h-screen-adapt-2 {
