@@ -9,8 +9,8 @@ module.exports = {
     siteUrl: "https://font-mars.netlify.com/",
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-no-index`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
