@@ -2,7 +2,7 @@ import React from "react";
 
 const LeftTriangle = () => (
   <div
-    className="w-0 h-0 border-solid absolute z-10"
+    className="w-0 h-0 border-solid z-10 hidden absolute lg:block"
     style={{
       borderWidth: "calc(100vh - 101px) 15vw 0px 0px",
       borderColor: "#ffffff transparent transparent transparent",
@@ -13,7 +13,7 @@ const LeftTriangle = () => (
 
 const RightTriangle = () => (
   <div
-    className="h-0 h-0 border-solid absolute z-20"
+    className="h-0 h-0 border-solid z-20 hidden absolute lg:block"
     style={{
       left: "calc(100% - 15vw)",
       borderWidth: "0px 0px calc(100vh - 101px) 15vw",

@@ -6,6 +6,7 @@ bottle: ../assets/wines/picpoul-bottle.png
 background: ../assets/chateau.jpg
 mobileBackground: ../assets/wines/picpoul.jpg
 commentary: "Robe : Or pâle, cristallin, reflet vert. Nez : Pêche blanche, arôme d’ananas, parfum de rose. Bouche : Vif, fruits exotiques en accord avec le nez."
+order: 0
 ---
 
 **Terroir** : Argilo-calcaire.

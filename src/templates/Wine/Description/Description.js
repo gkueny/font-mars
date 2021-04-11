@@ -19,22 +19,18 @@ const Description = ({
   description,
   commentary,
   mobileBackground,
-  isMobile,
-  isDesktop,
+  hasImages,
 }) => {
   return (
     <div
-      className="h-full bg-white absolute z-10 mt-4 lg:mt-0 lg:pt-12 lg:pl-12 lg:pt-4"
-      style={{
-        width: isMobile ? "100%" : "65%",
-      }}
+      className="h-full bg-white absolute z-10 mt-4 lg:mt-0 lg:pt-12 lg:pl-12 lg:pt-4 description"
     >
-      {isDesktop && <Title title={title} />}
+      <span className="hidden lg:inline"><Title title={title} /></span>
 
-      {isMobile && (
+      {mobileBackground && (
         <>
           <div
-            className="absolute z-10 flex items-center justify-center text-center rounded-lg"
+            className="absolute z-10  items-center justify-center text-center rounded-lg flex lg:hidden"
             style={{
               background: "rgba(0, 0, 0, 0.25)",
               height: "50%",
@@ -46,18 +42,27 @@ const Description = ({
           </div>
           <GatsbyImage
             image={mobileBackground.childImageSharp.gatsbyImageData}
-            className="h-full w-full shadow-2xl rounded-lg"
+            className="h-full w-full shadow-2xl rounded-lg block lg:hidden"
             style={{ height: "50%", left: "1rem", width: "calc(100% - 2rem)" }}
             alt=""
           />
         </>
       )}
+      {mobileBackground && (
+        <span className="inline lg:hidden">
+          <Title title={title} />
+        </span>
+      )}
 
-      {isMobile && <Commentary commentary={commentary} />}
+      <div className="blovk lg:hidden">
+        <Commentary commentary={commentary} />
+      </div>
 
       <div className="px-12 pt-12 pb-12 bg-white -mt-24 mb-12 lg:m-0 lg:p-0 lg:pb-6">
         <Markdown source={description} escapeHtml={false} />
-        {isDesktop && <Commentary commentary={commentary} />}
+        <div className="hidden lg:block">
+          <Commentary commentary={commentary} />
+        </div>
       </div>
     </div>
   );

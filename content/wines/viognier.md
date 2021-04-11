@@ -1,11 +1,9 @@
 ---
 title: VIOGNIER
 appellation: IGP Identification Géographique Protégée Pays d’Oc
-image: ../assets/wines/chardonnay-bottle.png
-bottle: ../assets/wines/chardonnay-bottle.png
-background: ../assets/vignes-3.jpg
+image: ../assets/wines/viogner.jpg
 commentary: "Robe : or jaune à reflets verts, lumineuse et limpide. Nez : complexe avec des notes de coing, de miel, de beurre et de fruits fraichement cueillis. Bouche : onctueuse dominée par les fruits, il présente un parfait équilibre."
-mobileBackground: ../assets/wines/chardonnay-bottle.png
+order: 1
 ---
 
 **Terroir** : Argilo-calcaire.

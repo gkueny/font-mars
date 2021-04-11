@@ -7,6 +7,7 @@ bottle: ../assets/wines/clemence-bottle.png
 background: ../assets/vignes.jpg
 mobileBackground: ../assets/wines/clemence-mobile.jpg
 commentary: "Robe : Rose tendre aux reflets argents. Nez : Bouquet de petits fruits rouges frais et d’agrumes. Bouche : En harmonie avec son nez, finale franche."
+order: 2
 ---
 
 **Terroir** : Argilo-calcaire.

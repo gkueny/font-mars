@@ -9,7 +9,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const resultWines = await graphql(
     `
       {
-        allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/wine/" } }) {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/wine/" } }
+          sort: { fields: frontmatter___order }
+        ) {
           edges {
             node {
               fields {

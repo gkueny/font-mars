@@ -7,6 +7,7 @@ bottle: ../assets/wines/dragon-bottle.png
 background: ../assets/home-header.jpg
 mobileBackground: ../assets/wines/dragon.png
 commentary: "Robe : Grenat, profond. Nez : Puissance des cépages, fruits rouges, sous bois, vanillé. Bouche : Epicé, tannin velouté qui participe à l’équilibre gustatif."
+order: 4
 ---
 
 **Terroir** : Argilo-calcaire.

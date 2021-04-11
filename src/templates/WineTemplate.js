@@ -5,16 +5,12 @@ import SEO from "../components/Seo";
 import Description from "./Wine/Description";
 import { LeftTriangle, RightTriangle } from "./Wine/Triangles";
 import Images from "./Wine/Images";
-import useWindowSize from "../hooks/useWindowSize";
-
-const MOBILE_MAX_WIDTH = 1023;
 
 const WineTemplate = ({ data }) => {
-  const { width } = useWindowSize();
-  const isDesktop = width > MOBILE_MAX_WIDTH;
-  const isMobile = !isDesktop;
-
   const wine = data.markdownRemark;
+
+  const hasImages = wine.frontmatter.background && wine.frontmatter.bottle;
+
   return (
     <Layout>
       <SEO title={wine.frontmatter.title} />
@@ -28,10 +24,9 @@ const WineTemplate = ({ data }) => {
             description={wine.rawMarkdownBody}
             commentary={wine.frontmatter.commentary}
             mobileBackground={wine.frontmatter.mobileBackground}
-            isMobile={isMobile}
-            isDesktop={isDesktop}
+            hasImages={hasImages}
           />
-          {isDesktop && (
+          {hasImages && (
             <>
               <LeftTriangle />
               <Images

@@ -12,7 +12,6 @@
   .h-screen-adapt {
     height: calc(100vh - 104px);
   }
-  /* ... */
 }
 
 .h-screen-adapt-2 {
@@ -36,6 +35,15 @@
 
 #contact-map {
   z-index: 0;
+}
+
+.description {
+  width: 100%;
+}
+@media  (min-width: 1024px) {
+  .description {
+    width: 65%;
+  }
 }
 
 .glide {
