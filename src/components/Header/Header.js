@@ -9,6 +9,8 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
 
+  const hidden = !open && width <= MOBILE_MAX_WIDTH;
+
   return (
     <header>
       <nav className="flex items-center justify-between flex-wrap bg-white p-6">
@@ -33,12 +35,9 @@ const Header = () => {
           </button>
         </div>
         <div
-          className={classNames(
-            "absolute w-full block flex justify-center z-20 top-75 left-0 bg-white lg:flex lg:static lg:items-center lg:w-auto",
-            {
-              hidden: !open && width <= MOBILE_MAX_WIDTH,
-            }
-          )}
+          className={`absolute w-full block flex justify-center z-20 top-75 left-0 bg-white lg:flex lg:static lg:items-center lg:w-auto${
+            hidden ? " hidden" : ""
+          }`}
         >
           <div className="text-xl lg:text-base lg:flex-grow">
             <Link
