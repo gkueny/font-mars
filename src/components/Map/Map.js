@@ -1,32 +1,31 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
-const tileLayer =
-  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+const tileLayer = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const attribution = `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`;
+const mapId = "contact-map";
 
-const isClient = typeof window === "object";
+const Map = ({ width = "100%", height = "100%" }) => {
+  const [rand, setRand] = React.useState(0);
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window && window.L) {
+      const map = window.L.map(mapId).setView(
+        [43.43026213626366, 3.5513666306899644],
+        13
+      );
+      window.L.tileLayer(tileLayer, {
+        attribution,
+      }).addTo(map);
 
-const Map = ({ width, height }) => {
-  if (!isClient) {
-    return <p className="text-gray-900 text-xl">Chargement de la carte...</p>;
-  }
-  return (
-    <MapContainer
-      center={[43.43126213626366, 3.5521666306899644]}
-      zoom={13}
-      scrollWheelZoom={false}
-      style={{
-        height: height || "300px",
-        width: width || "100%",
-        zIndex: "0",
-        maxHeight: "70vh",
-      }}
-    >
-      <TileLayer attribution={attribution} url={tileLayer} />
-      <Marker position={[43.43126213626366, 3.5521666306899644]}></Marker>
-    </MapContainer>
-  );
+      window.L.marker([43.43026213626366, 3.5513666306899644]).addTo(map);
+    } else {
+      setTimeout(() => {
+        setRand(rand => rand + 1)
+      }, 500);
+    }
+  }, [rand]);
+
+  return <div id={mapId} style={{ height, width }}></div>
+
 };
 
 export default Map;
