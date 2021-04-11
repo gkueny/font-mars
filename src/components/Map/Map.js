@@ -2,8 +2,8 @@ import React from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 
 const tileLayer =
-  "https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png";
-const attribution = `&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors`;
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+const attribution = `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`;
 
 const isClient = typeof window === "object";
 
