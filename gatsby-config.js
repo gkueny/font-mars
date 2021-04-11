@@ -72,13 +72,5 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-splitbee`,
-      options: {
-        includeInDevelopment: false,
-        delayTimeout: 0,
-        disableCookie: true
-      },
-    },
   ],
 };

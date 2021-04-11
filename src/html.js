@@ -18,6 +18,7 @@ export default function HTML(props) {
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossOrigin=""
         />
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
