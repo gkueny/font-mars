@@ -10,6 +10,8 @@ const ContactUs = () => (
     <a
       data-splitbee-event="Contact from location page"
       href="mailto:locationfontmars@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
       className="absolute mt-4 bg-red-500 text-white active:bg-red-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 lg:mt-12"
     >
       Nous contacter
@@ -55,6 +57,8 @@ const Location = ({ data }) => {
           <a
             className="text-red-500 font-bold hover:text-red-600"
             href="mailto:locationfontmars@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             locationfontmars@gmail.com
           </a>
@@ -104,6 +108,8 @@ const Location = ({ data }) => {
           <a
             className="text-red-500 font-bold hover:text-red-600"
             href="mailto:locationfontmars@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             locationfontmars@gmail.com
           </a>
