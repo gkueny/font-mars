@@ -6,7 +6,7 @@ module.exports = {
     },
     description:
       "En Languedoc à FONT-MARS, notre vignoble est implanté sur des terres où se trouvent des fossiles d’ œufs de dinosaures. C’est le témoignage de la préservation et de l’histoire de ce Terroir unique",
-    siteUrl: "https://font-mars.netlify.com/",
+    siteUrl: "https://font-mars.com/",
   },
   plugins: [
     `gatsby-plugin-sitemap`,
