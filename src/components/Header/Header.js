@@ -9,11 +9,11 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
 
-  const hidden = !open && width <= MOBILE_MAX_WIDTH;
+  const isOpen = open || width > MOBILE_MAX_WIDTH;
 
   return (
     <header>
-      <nav className="flex items-center justify-between flex-wrap bg-white p-6">
+      <nav className="flex items-center justify-between bg-white p-6">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <h1 className="font-semibold text-xl tracking-tight text-gray-800">
             <Link to="/">Domaine Font-Mars</Link>
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
         <div
           className={`absolute w-full block flex justify-center z-20 top-75 left-0 bg-white lg:flex lg:static lg:items-center lg:w-auto${
-            hidden ? " hidden" : ""
+            isOpen ? "" : " hidden"
           }`}
         >
           <div className="text-xl lg:text-base lg:flex-grow">
