@@ -23,6 +23,7 @@ const Wines = () => {
     query AllWines {
       allWines: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/wine/" } }
+        sort: { fields: frontmatter___order }
       ) {
         edges {
           node {
