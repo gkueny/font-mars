@@ -55,7 +55,7 @@ const Description = ({
 
       {isMobile && <Commentary commentary={commentary} />}
 
-      <div className="px-12 pt-12 bg-white -mt-24 mb-12 lg:my-0 lg:p-0">
+      <div className="px-12 pt-12 pb-12 bg-white -mt-24 mb-12 lg:m-0 lg:p-0 lg:pb-6">
         <Markdown source={description} escapeHtml={false} />
         {isDesktop && <Commentary commentary={commentary} />}
       </div>

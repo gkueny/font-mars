@@ -18,9 +18,9 @@ const WineTemplate = ({ data }) => {
   return (
     <Layout>
       <SEO title={wine.frontmatter.title} />
-      <section className="lg:overflow-hidden h-full">
+      <section className="h-full">
         <div
-          className="relative flex w-full h-full lg:overflow-hidden "
+          className="relative flex w-full h-full"
           style={{ maxHeight: "1000px" }}
         >
           <Description

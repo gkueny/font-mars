@@ -7,7 +7,7 @@ const Wine = ({ wine }) => {
     <div
       role="link"
       onClick={() => navigate(wine.fields.slug)}
-      className="max-w-sm overflow-hidden px-6 w-full cursor-pointer"
+      className="max-w-sm px-6 w-full cursor-pointer"
     >
       <div className="rounded shadow mb-16 hover:shadow-lg">
         <GatsbyImage

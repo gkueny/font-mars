@@ -21,6 +21,7 @@ const Commentary = ({ commentary }) => {
             alt="Jean-Baptiste de Clock"
             image={data.avatar.childImageSharp.gatsbyImageData}
             className="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
+            imgStyle={{borderRadius: "5rem"}}
           ></GatsbyImage>
         </div>
         <div>
@@ -29,8 +30,8 @@ const Commentary = ({ commentary }) => {
           </h2>
           <div className="mt-2 text-gray-700">
             <ul>
-              {commentary.split(". ").map((commentarySplitted) => (
-                <li>{commentarySplitted}.</li>
+              {commentary.split(". ").map((commentarySplitted, i) => (
+                <li key={i}>{commentarySplitted}.</li>
               ))}
             </ul>
           </div>

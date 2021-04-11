@@ -25,7 +25,7 @@ const ContactInfos = ({ height = 750 }) => {
         ></div>
       )}
       <section
-        className="relative max-w-screen-xl m-auto px-1 z-10 flex items-center h-auto py-12 lg:px-12 lg:py-12 w-full"
+        className="relative max-w-screen-xl m-auto px-1 z-10 flex items-center h-auto py-12 lg:px-12 lg:py-12 w-full mb:6"
         style={{
           height: !isMobile && `${height}px`,
         }}
