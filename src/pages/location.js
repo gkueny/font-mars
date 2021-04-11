@@ -8,6 +8,7 @@ import IllustratedText from "../components/IllustratedText";
 const ContactUs = () => (
   <div className="flex items-center justify-center mt-8 lg:mt-0">
     <a
+      data-splitbee-event="Contact from location page"
       href="mailto:locationfontmars@gmail.com"
       className="absolute mt-4 bg-red-500 text-white active:bg-red-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 lg:mt-12"
     >
