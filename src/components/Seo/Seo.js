@@ -28,10 +28,6 @@ const SEO = ({ description, lang, meta, title }) => {
       titleTemplate={`%s${title ? ` | ${title}` : ""}`}
       meta={[
         {
-          name: `robots`,
-          content: "noindex",
-        },
-        {
           name: `description`,
           content: metaDescription,
         },
