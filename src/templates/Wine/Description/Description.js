@@ -22,10 +22,10 @@ const Description = ({
   hasImages,
 }) => {
   return (
-    <div
-      className="h-full bg-white absolute z-10 mt-4 lg:mt-0 lg:pt-12 lg:pl-12 lg:pt-4 description"
-    >
-      <span className="hidden lg:inline"><Title title={title} /></span>
+    <div className="h-full bg-white absolute z-10 mt-4 lg:mt-0 lg:pt-12 lg:pl-12 lg:pt-4 description">
+      <span className="hidden lg:inline">
+        <Title title={title} />
+      </span>
 
       {mobileBackground && (
         <>

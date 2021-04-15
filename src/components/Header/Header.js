@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import classNames from "classnames";
 import useWindowSize from "../../hooks/useWindowSize";
 
 const MOBILE_MAX_WIDTH = 1023;

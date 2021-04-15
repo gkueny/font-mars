@@ -36,7 +36,6 @@ const Histoire = ({ data }) => {
       <IllustratedText
         imgFluid={data.imageFamille.childImageSharp.gatsbyImageData}
         inverted
-        height={900}
       >
         <h2 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
           UNE FAMILLE DE VIN

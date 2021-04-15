@@ -21,7 +21,7 @@ const Commentary = ({ commentary }) => {
             alt="Jean-Baptiste de Clock"
             image={data.avatar.childImageSharp.gatsbyImageData}
             className="w-20 h-20 object-cover rounded-full border-2 border-indigo-500"
-            imgStyle={{borderRadius: "5rem"}}
+            imgStyle={{ borderRadius: "5rem" }}
           ></GatsbyImage>
         </div>
         <div>

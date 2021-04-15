@@ -19,13 +19,12 @@ const Map = ({ width = "100%", height = "100%" }) => {
       window.L.marker([43.43026213626366, 3.5513666306899644]).addTo(map);
     } else {
       setTimeout(() => {
-        setRand(rand => rand + 1)
+        setRand((rand) => rand + 1);
       }, 500);
     }
   }, [rand]);
 
-  return <div id={mapId} style={{ height, width }}></div>
-
+  return <div id={mapId} style={{ height, width }}></div>;
 };
 
 export default Map;

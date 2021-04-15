@@ -1,16 +1,11 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
-import useWindowSize from "../../hooks/useWindowSize";
 
-const MOBILE_MAX_WIDTH = 1024;
-
-const Illustration = ({ imgFluid, inverted, isMobile }) => (
+const Illustration = ({ imgFluid, inverted }) => (
   <div
-    className={`w-full lg:h-full ${inverted ? "lg:-ml-6" : "lg:-mr-6"}`}
-    style={{
-      width: !isMobile && "calc(40% + 1.5rem)",
-      height: isMobile && "20rem",
-    }}
+    className={`illustratedtext-illustration ${
+      inverted ? "lg:-ml-6" : "lg:-mr-6"
+    }`}
   >
     <GatsbyImage
       image={imgFluid}
@@ -20,14 +15,18 @@ const Illustration = ({ imgFluid, inverted, isMobile }) => (
   </div>
 );
 
-const Text = ({ children, inverted, isMobile }) => (
+const Text = ({
+  children,
+  inverted,
+  displayOnlyOnDesktop = false,
+  hideOnDesktop = false,
+}) => (
   <div
-    className={`bg-white rounded-xl shadow-lg p-4 z-10 -mt-64 lg:p-12 lg:mt-0  ${
+    className={`illustratedtext-text bg-white rounded-xl shadow-lg p-4 z-10 -mt-16 lg:p-12 lg:mt-0  ${
       inverted ? "lg:-mr-6" : "lg:-ml-6"
+    } ${displayOnlyOnDesktop ? "hidden lg:block" : ""} ${
+      hideOnDesktop ? "lg:hidden" : ""
     }`}
-    style={{
-      width: isMobile ? "calc(100% - 2rem)" : "calc(60% + 1.5rem)",
-    }}
   >
     {children}
   </div>
@@ -37,51 +36,33 @@ const IllustratedText = ({
   children,
   imgFluid,
   inverted = false,
-  height = 650,
   background = null,
 }) => {
-  const { width } = useWindowSize();
-  const IS_MOBILE = width < MOBILE_MAX_WIDTH;
-
   return (
     <>
-      {!IS_MOBILE && (
-        <div
-          className="absolute bg-gray-100 z-0"
-          style={{
-            width: inverted ? "30%" : "70%",
-            height: `${height}px`,
-            left: inverted ? "70%" : "0",
-          }}
-        ></div>
-      )}
-      <section
-        className="relative max-w-screen-xl m-auto px-1 z-10 flex items-center h-auto py-12 lg:px-12 lg:py-12 w-full"
+      <div
+        className="absolute bg-gray-100 z-0 hidden lg:block illustrated-heigth"
         style={{
-          height: !IS_MOBILE && `${height}px`,
+          width: inverted ? "30%" : "70%",
+          left: inverted ? "70%" : "0",
         }}
-      >
+      ></div>
+      <section className="relative max-w-screen-xl m-auto px-1 z-10 flex items-center py-12 lg:px-12 lg:py-12 w-full illustrated-heigth-desktop">
         <article className="flex items-center flex-col h-full lg:flex-row lg:m-12 w-full">
-          {inverted && !IS_MOBILE && (
-            <Text isMobile={IS_MOBILE} inverted={inverted}>
+          {inverted && (
+            <Text inverted={inverted} displayOnlyOnDesktop>
               {children}
             </Text>
           )}
           {background ? (
             background
           ) : (
-            <Illustration
-              isMobile={IS_MOBILE}
-              imgFluid={imgFluid}
-              inverted={inverted}
-            />
+            <Illustration imgFluid={imgFluid} inverted={inverted} />
           )}
 
-          {(!inverted || IS_MOBILE) && (
-            <Text isMobile={IS_MOBILE} inverted={inverted}>
-              {children}
-            </Text>
-          )}
+          <Text inverted={inverted} hideOnDesktop={inverted}>
+            {children}
+          </Text>
         </article>
       </section>
     </>

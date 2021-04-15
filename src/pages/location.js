@@ -32,7 +32,6 @@ const Location = ({ data }) => {
       <IllustratedText
         imgFluid={data.piscine.childImageSharp.gatsbyImageData}
         inverted
-        height={700}
       >
         <h3 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
           LOCATION POUR UN ÉVÉNEMENT PRIVE OU ENTREPRISE
@@ -67,10 +66,7 @@ const Location = ({ data }) => {
         <ContactUs />
       </IllustratedText>
 
-      <IllustratedText
-        imgFluid={data.repas.childImageSharp.gatsbyImageData}
-        height={800}
-      >
+      <IllustratedText imgFluid={data.repas.childImageSharp.gatsbyImageData}>
         <h3 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
           LOCATION SAISONNIÈRE
         </h3>
