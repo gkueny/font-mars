@@ -4,7 +4,7 @@ const tileLayer = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const attribution = `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`;
 const mapId = "contact-map";
 
-const Map = ({ width = "100%", height = "100%" }) => {
+const Map = ({ className }) => {
   const [rand, setRand] = React.useState(0);
   React.useEffect(() => {
     if (typeof window !== "undefined" && window && window.L) {
@@ -24,7 +24,7 @@ const Map = ({ width = "100%", height = "100%" }) => {
     }
   }, [rand]);
 
-  return <div id={mapId} style={{ height, width }}></div>;
+  return <div id={mapId} className={className}></div>;
 };
 
 export default Map;

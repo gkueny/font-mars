@@ -52,6 +52,36 @@
   }
 }
 
+.contact-infos {
+  height: auto;
+}
+.contact-infos-map {
+  width: 100%;
+  height: 600px;
+  max-height: 60vh;
+}
+.contact-infos-background {
+  width: 70%;
+  height: 650px;
+  left: 0;
+}
+.contact-card-wrapper {
+  width: calc(100% - 2rem);
+}
+@media (min-width: 1024px) {
+  .contact-infos {
+    height: 750px;
+  }
+  .contact-infos-map {
+    width: calc(60% + 1.5rem);
+    height: 100%;
+  }
+  .contact-card-wrapper {
+    width: calc(40% + 1.5rem);
+  }
+}
+
+
 @font-face {
   font-family: "baunaus";
   font-style: normal;
