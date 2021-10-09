@@ -18,3 +18,5 @@ order: 0
 Collage et filtration avant embouteillage au domaine.
 
 **A consommer** : Apéritif, fruit de mer, poisson. A consommer dans les deux ans, servir entre 12 et 14 °C.
+
+![Logo Picpoul de pinet](/LogoPP_Complet-Couleur.jpg)

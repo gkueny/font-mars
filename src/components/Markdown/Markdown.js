@@ -6,6 +6,7 @@ import MarkdownParagraphRender from "./helpers/markdownParagraphRender";
 import MarkdownListRender from "./helpers/markdownListRender";
 import MarkdownBlockquoteRender from "./helpers/markdownBlockquoteRender";
 import MarkdownLinkRender from "./helpers/markdownLinkRender";
+import MarkdownImageRender from "./helpers/markdownImageRender";
 
 const Markdown = ({ source, escapeHtml = false }) => {
   return (
@@ -19,6 +20,7 @@ const Markdown = ({ source, escapeHtml = false }) => {
         list: MarkdownListRender,
         blockquote: MarkdownBlockquoteRender,
         link: MarkdownLinkRender,
+        image: MarkdownImageRender,
       }}
     />
   );
