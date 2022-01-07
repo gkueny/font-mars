@@ -6,10 +6,16 @@ const MOBILE_MAX_WIDTH = 1023;
 
 const Header = ({ lang = "fr" }) => {
   const [open, setOpen] = useState(false);
+  const [url, setUrl] = useState("/");
   const { width } = useWindowSize();
 
   const isOpen = open || width > MOBILE_MAX_WIDTH;
-  const url = window.location.pathname || "/";
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window && window.location) {
+      setUrl(window.location.pathname);
+    }
+  }, []);
 
   const currentFrLink = lang === "fr" ? url : url.replace("/en/", "/");
   const currentEnLink = lang === "en" ? url : `/en${url}`;
