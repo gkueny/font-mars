@@ -5,8 +5,15 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const Wine = ({ wine }) => {
   return (
     <div
+      tabIndex={0}
       role="link"
       onClick={() => navigate(wine.fields.slug)}
+      onKeyDown={(e) => {
+        if (e.code === "Enter") {
+          e.preventDefault();
+          navigate(wine.fields.slug);
+        }
+      }}
       className="max-w-sm px-6 w-full cursor-pointer"
     >
       <div className="rounded shadow mb-16 hover:shadow-lg">
