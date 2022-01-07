@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
-import Hero from "../components/Hero";
-import IllustratedText from "../components/IllustratedText";
+import Layout from "../../components/Layout";
+import Seo from "../../components/Seo";
+import Hero from "../../components/Hero";
+import IllustratedText from "../../components/IllustratedText";
 
 const ContactUs = () => (
   <div className="flex items-center justify-center mt-8 lg:mt-0">
@@ -14,18 +14,18 @@ const ContactUs = () => (
       rel="noopener noreferrer"
       className="absolute mt-4 bg-red-500 text-white active:bg-red-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 lg:mt-12"
     >
-      Nous contacter
+      Contact us
     </a>
   </div>
 );
 
 const Location = ({ data }) => {
   return (
-    <Layout>
-      <Seo title="Location / Privatisation" />
+    <Layout lang="en">
+      <Seo title="RENTING / PRIVATIZING" />
       <Hero type="2" image={data.headerImage} alt="Vignes de Font-Mars">
         <h2 className="absolute text-4xl text-white lg:text-7xl">
-          Privatiser Font-Mars
+          Privatizing Font-Mars
         </h2>
       </Hero>
 
@@ -34,25 +34,24 @@ const Location = ({ data }) => {
         inverted
       >
         <h3 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
-          LOCATION POUR UN ÉVÉNEMENT PRIVE OU ENTREPRISE
+          RENT FOR A PRIVATE OR A CORPORATE EVENT
         </h3>
         <p className="text-gray-900 text-lg mt-2">
-          N'hésitez pas à nous contacter si vous souhaitez réserver Font-Mars
-          pour un événement. C'est un cadre idéal pour réunir vos amis, famille
-          ou équipes à 40km de Montpellier entre vignes et garrigue.
+          Feel free to contact us if you want to book Font-Mars for an event. It
+          is an ideal place to gather your friends, family or team, 40 km away
+          from Montpellier, between vineyards and garrigue.
         </p>
         <p className="text-gray-900 text-lg mt-2">
-          Nous pouvons privatiser le parc, l'espace piscine & pool house ou les
-          salles de réception, et vous proposer des animations autour du vin
-          (visite, dégustation, parcours dans les vignes...).
+          You can privatize the park, the pool area & pool house or the
+          reception rooms, and we can offer you wine-related activities
+          (tastings, visits of the vineyards …).
         </p>
         <br />
         <p className="text-gray-900 text-lg mt-2">
-          Le parc est idéal pour vos chasses au trésor ou autres activités en
-          extérieur.
+          The park is ideal for your treasure hunts or other outdoor activities.
         </p>
         <p className="text-gray-900 text-lg mt-2">
-          Contactez-nous à{" "}
+          Contact us at{" "}
           <a
             className="text-red-500 font-bold hover:text-red-600"
             href="mailto:locationfontmars@gmail.com"
@@ -61,46 +60,46 @@ const Location = ({ data }) => {
           >
             locationfontmars@gmail.com
           </a>
-          , nous serons ravis d'étudier votre demande.
+          , we will be happy to study your request.
         </p>
         <ContactUs />
       </IllustratedText>
 
       <IllustratedText imgFluid={data.repas.childImageSharp.gatsbyImageData}>
         <h3 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
-          LOCATION SAISONNIÈRE
+          SEASONAL RENTAL
         </h3>
         <p className="text-gray-900 text-lg mt-2">
-          Avis aux amateurs de vacances au cœur d'un vignoble Languedocien... Le
-          Château de Font-Mars est disponible à la location à la semaine de
-          mi-juillet à fin août.
+          Château de Font-Mars is available for weekly rental from mid-July to
+          the end of August.
         </p>
         <p className="text-gray-900 text-lg mt-2">
-          Location Château familial au cœur d'un vignoble languedocien. 30 min
-          de Sète et 15 km des plages Piscine - parc - jusqu'à 15 personnes.
+          Family castle for rent, in the heart of a vineyard in Languedoc Thau
+          Basin/Mèze, 30 minutes away from Sète and 15 kms from the beaches
+          Swimming pool, park, up to 15 persons
         </p>
         <p className="text-gray-900 text-lg mt-2">
-          Cette charmante demeure familiale entourée d’un superbe parc
-          méridional clos se situe :
+          This charming family home, 450 sqm, surrounded by a superb southern
+          enclosed park of 8 000 sqm, is located :
         </p>
         <ul className="list-disc list-inside text-gray-900 text-lg pl-4">
           <li>
-            au cœur d'un vignoble en activité, entouré de garrigue et de pins
+            In the heart of an active vineyard, surrounded by garrigue and
+            pines;
           </li>
           <li>
-            à 10 min du bassin de Thau en face de la colline de Sète, à 15 km de
-            la mer Méditerranée et de ses plages.
+            10 minutes away from the Thau Basin, opposite the hill of Sète, 15
+            kms from the Mediterranean sea and its beaches
           </li>
           <li>
-            {" "}
-            situation idéale au cœur du Languedoc, proche de la mer et des
-            différentes infrastructures touristiques et pratiques .
+            Ideally in the heart of Languedoc, close to the seaside and its
+            various touristic facilities.
           </li>
         </ul>
         <p className="text-gray-900 text-lg mt-2">
-          Le lieu est propice pour des vacances en famille ou entre amis,
-          bercées par les cigales du Midi et au rythme d’un vignoble du
-          Languedoc ! Pour plus d'informations :{" "}
+          The place is perfect for family holidays or with friends, lulled by
+          the cicadas from the South and at the rhythm of a Languedoc vineyard.
+          For any further information{" "}
           <a
             className="text-red-500 font-bold hover:text-red-600"
             href="mailto:locationfontmars@gmail.com"

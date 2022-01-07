@@ -21,8 +21,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content/wines/`,
-        name: "wines",
+        path: `${__dirname}/content/wines/fr`,
+        name: "winesfr",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/wines/en`,
+        name: "winesen",
       },
     },
     {

@@ -7,11 +7,11 @@ const Wine = ({ wine }) => {
     <div
       tabIndex={0}
       role="link"
-      onClick={() => navigate(wine.fields.slug)}
+      onClick={() => navigate(wine.frontmatter.slug)}
       onKeyDown={(e) => {
         if (e.code === "Enter") {
           e.preventDefault();
-          navigate(wine.fields.slug);
+          navigate(wine.frontmatter.slug);
         }
       }}
       className="max-w-sm px-6 w-full cursor-pointer"

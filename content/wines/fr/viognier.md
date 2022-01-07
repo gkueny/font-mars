@@ -1,9 +1,10 @@
 ---
 title: VIOGNIER
 appellation: IGP Identification Géographique Protégée Pays d’Oc
-image: ../assets/wines/viogner.jpg
+image: ../../assets/wines/viogner.jpg
 commentary: "Robe : or jaune à reflets verts, lumineuse et limpide. Nez : complexe avec des notes de coing, de miel, de beurre et de fruits fraichement cueillis. Bouche : onctueuse dominée par les fruits, il présente un parfait équilibre."
 order: 1
+slug: /viognier
 ---
 
 **Terroir** : Argilo-calcaire.

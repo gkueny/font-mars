@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../Header";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, lang = "fr" }) => {
   return (
     <div className="layout">
-      <Header />
+      <Header lang={lang || "fr"} />
       <main className="relative h-screen-adapt overflow-scroll">
         {children}
       </main>

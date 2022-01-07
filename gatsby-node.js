@@ -10,16 +10,14 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/wine/" } }
+          filter: { fileAbsolutePath: { regex: "/wines\/(en|fr)/" } }
           sort: { fields: frontmatter___order }
         ) {
           edges {
             node {
-              fields {
-                slug
-              }
               frontmatter {
                 title
+                slug
               }
             }
           }
@@ -36,10 +34,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   wines.forEach((wine) => {
     createPage({
-      path: wine.node.fields.slug,
+      path: wine.node.frontmatter.slug,
       component: winePage,
       context: {
-        slug: wine.node.fields.slug,
+        slug: wine.node.frontmatter.slug,
       },
     });
   });

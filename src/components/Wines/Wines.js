@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Glide from "@glidejs/glide";
 import Wine from "./Wine";
 
-const Wines = () => {
+const Wines = ({ lang = "fr" }) => {
   React.useEffect(() => {
     new Glide(".glide", {
       startAt: 0,
@@ -22,17 +22,15 @@ const Wines = () => {
   const data = useStaticQuery(graphql`
     query AllWines {
       allWines: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/wine/" } }
+        filter: { fileAbsolutePath: { regex: "/wines\/(en|fr)/" } }
         sort: { fields: frontmatter___order }
       ) {
         edges {
           node {
             id
             excerpt
-            fields {
-              slug
-            }
             frontmatter {
+              slug
               title
               gamme
               appellation
@@ -53,7 +51,12 @@ const Wines = () => {
     }
   `);
 
-  const wines = data.allWines.edges;
+  const wines = data.allWines.edges.filter(({ node }) => {
+    if (lang === "en") {
+      return node.frontmatter.slug.includes("en/");
+    }
+    return !node.frontmatter.slug.includes("en/");
+  });
 
   return (
     <section>
@@ -64,7 +67,7 @@ const Wines = () => {
               <ul className="glide__slides">
                 {wines.map(({ node }) => (
                   <li key={node.id} className="glide__slide">
-                    <Wine wine={node} />
+                    <Wine wine={node} lang={lang} />
                   </li>
                 ))}
               </ul>

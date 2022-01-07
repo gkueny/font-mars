@@ -1,5 +1,5 @@
 import React from "react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown/with-html";
 import MarkdownInlineCodeRender from "./helpers/markdownInlineCodeRender";
 import MarkdownHeadingRender from "./helpers/markdownHeadingRender";
 import MarkdownParagraphRender from "./helpers/markdownParagraphRender";

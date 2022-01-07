@@ -12,7 +12,7 @@ const WineTemplate = ({ data }) => {
   const hasImages = wine.frontmatter.background && wine.frontmatter.bottle;
 
   return (
-    <Layout>
+    <Layout lang={wine.frontmatter.slug.includes("/en/") ? "en" : "fr"}>
       <Seo title={wine.frontmatter.title} />
       <section className="h-full">
         <div
@@ -51,10 +51,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       id
       rawMarkdownBody
       frontmatter {
+        slug
         title
         commentary
         bottle {
