@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import IllustratedText from "../components/IllustratedText";
 
 const Histoire = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Histoire" />
+      <Seo title="Histoire" />
 
       <IllustratedText
         imgFluid={data.imageHistoire.childImageSharp.gatsbyImageData}

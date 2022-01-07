@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import Hero from "../components/Hero";
 import Wines from "../components/Wines";
 
@@ -10,7 +10,7 @@ const Home = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO />
+      <Seo />
       <Hero type="2" image={data.headerImage} alt="Vignes de Font-Mars">
         <h2 className="absolute text-4xl text-white lg:text-7xl">Nos vins</h2>
       </Hero>

@@ -1,13 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import IllustratedText from "../components/IllustratedText";
 
 const NotreTerroir = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Notre terroir" />
+      <Seo title="Notre terroir" />
       <IllustratedText imgFluid={data.image.childImageSharp.gatsbyImageData}>
         <h2 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl">
           Notre terroir

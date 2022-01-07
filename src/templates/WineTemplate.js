@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import Description from "./Wine/Description";
 import { LeftTriangle, RightTriangle } from "./Wine/Triangles";
 import Images from "./Wine/Images";
@@ -13,7 +13,7 @@ const WineTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={wine.frontmatter.title} />
+      <Seo title={wine.frontmatter.title} />
       <section className="h-full">
         <div
           className="relative flex w-full h-full"

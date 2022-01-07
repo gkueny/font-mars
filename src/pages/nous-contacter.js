@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import SEO from "../components/Seo";
+import Seo from "../components/Seo";
 import Map from "../components/Map";
 import ContactCard from "../components/ContactCard";
 
@@ -23,7 +23,7 @@ const ContactInfos = () => {
 const NousContacter = () => {
   return (
     <Layout>
-      <SEO title="Nous contacter" />
+      <Seo title="Nous contacter" />
       <ContactInfos />
     </Layout>
   );
