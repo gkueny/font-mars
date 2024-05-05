@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const Commentary = ({ commentary }) => {
+const Commentary = ({ commentary, lang = "fr" }) => {
   const data = useStaticQuery(graphql`
     query CommentaryQuery {
       avatar: file(absolutePath: { regex: "/jean-baptiste.jpg/" }) {
@@ -26,7 +26,7 @@ const Commentary = ({ commentary }) => {
         </div>
         <div>
           <h2 className="text-gray-800 text-xl font-semibold leading-8 lg:text-3xl">
-            Commentaire de dégustation
+            {lang === "fr" ? "Commentaire de dégustation" : "Tasting notes"}
           </h2>
           <div className="mt-2 text-gray-700">
             <ul>

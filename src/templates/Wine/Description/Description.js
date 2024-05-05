@@ -63,13 +63,13 @@ const Description = ({
       )}
 
       <div className="blovk lg:hidden">
-        <Commentary commentary={commentary} />
+        <Commentary commentary={commentary} lang={lang} />
       </div>
 
       <div className="px-12 pt-12 pb-12 bg-white -mt-24 mb-12 lg:m-0 lg:p-0 lg:pb-6">
         <Markdown source={description} escapeHtml={false} />
         <div className="hidden lg:block">
-          <Commentary commentary={commentary} />
+          <Commentary commentary={commentary} lang={lang} />
         </div>
       </div>
     </div>
