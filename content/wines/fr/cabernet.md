@@ -6,7 +6,7 @@ bottle: ../../assets/wines/cabernet-bottle.png
 background: ../../assets/home-header.jpg
 mobileBackground: ../../assets/wines/cabernet-mobile.jpg
 commentary: "Robe : Dense, couleur grenat. Nez : Fruit mûr, réglisse. Bouche : Puissance du cépage, tannique."
-order: 3
+order: 4
 slug: /cabernet
 ---
 

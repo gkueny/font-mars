@@ -6,7 +6,7 @@ bottle: ../../assets/wines/cabernet-bottle.png
 background: ../../assets/home-header.jpg
 mobileBackground: ../../assets/wines/cabernet-mobile.jpg
 commentary: "Color : Thick, garnet-red colour. Smell : Ripe fruit, liquorice. Mouth : Power of the tanic grape-variety."
-order: 3
+order: 4
 slug: /en/cabernet
 ---
 
