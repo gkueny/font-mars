@@ -22,7 +22,7 @@ const Wines = ({ lang = "fr" }) => {
   const data = useStaticQuery(graphql`
     query AllWines {
       allWines: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/wines\/(en|fr)/" } }
+        filter: { fileAbsolutePath: { regex: "/wines/(en|fr)/" } }
         sort: { fields: frontmatter___order }
       ) {
         edges {
@@ -35,6 +35,7 @@ const Wines = ({ lang = "fr" }) => {
               gamme
               appellation
               description
+              outOfStock
               image {
                 childImageSharp {
                   gatsbyImageData(

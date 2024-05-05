@@ -20,12 +20,20 @@ const Description = ({
   commentary,
   mobileBackground,
   hasImages,
+  outOfStock,
+  lang,
 }) => {
   return (
     <div className="h-full bg-white absolute z-10 mt-4 lg:mt-0 lg:pt-12 lg:pl-12 lg:pt-4 description">
       <span className="hidden lg:inline">
         <Title title={title} />
       </span>
+
+      {outOfStock && (
+        <span class="inline-block bg-red-50 rounded-full px-3 py-1 text-md font-bold text-red-800 mr-2 mb-2">
+          {lang === "fr" ? "épuisé" : "Out of stock"}
+        </span>
+      )}
 
       {mobileBackground && (
         <>

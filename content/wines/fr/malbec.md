@@ -6,7 +6,7 @@ bottle: ../../assets/wines/malbec-bottle.png
 background: ../../assets/home-header.jpg
 mobileBackground: ../../assets/wines/malbec-mobile.jpg
 commentary: "Robe : Grenat, profond à reflet violine. Nez : Puissance du cépage, fruits noirs. Bouche : Epicé, tanin."
-order: 3
+order: 1
 slug: /malbec
 ---
 

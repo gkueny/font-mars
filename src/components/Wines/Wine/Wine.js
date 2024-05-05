@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const Wine = ({ wine }) => {
+const Wine = ({ wine, lang = "fr" }) => {
   return (
     <div
       tabIndex={0}
@@ -25,6 +25,11 @@ const Wine = ({ wine }) => {
         ></GatsbyImage>
         <div className="px-6 py-4 text-center">
           <h3 className="font-bold text-xl mb-2">{wine.frontmatter.title}</h3>
+          {wine.frontmatter.outOfStock && (
+            <span class="inline-block bg-red-50 rounded-full px-3 py-1 text-md font-bold text-red-800 mr-2 mb-2">
+              {lang === "fr" ? "épuisé" : "Out of stock"}
+            </span>
+          )}
         </div>
       </div>
     </div>

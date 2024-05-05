@@ -3,7 +3,7 @@ title: VIOGNIER
 appellation: IGP Identification Géographique Protégée Pays d’Oc
 image: ../../assets/wines/viogner.jpg
 commentary: "Color : yellow gold with green reflections, bright and crystal clear. Nose : ccomplex with notes of quince, honey fruits freshly picked. Mouth : smooth dominated by fruits, it presents a perfect balance."
-order: 1
+order: 2
 slug: /en/viognier
 ---
 

@@ -10,9 +10,9 @@ const WineTemplate = ({ data }) => {
   const wine = data.markdownRemark;
 
   const hasImages = wine.frontmatter.background && wine.frontmatter.bottle;
-
+  const lang = wine.frontmatter.slug.includes("/en/") ? "en" : "fr";
   return (
-    <Layout lang={wine.frontmatter.slug.includes("/en/") ? "en" : "fr"}>
+    <Layout lang={lang}>
       <Seo title={wine.frontmatter.title} />
       <section className="h-full">
         <div
@@ -24,7 +24,9 @@ const WineTemplate = ({ data }) => {
             description={wine.rawMarkdownBody}
             commentary={wine.frontmatter.commentary}
             mobileBackground={wine.frontmatter.mobileBackground}
+            outOfStock={wine.frontmatter.outOfStock}
             hasImages={hasImages}
+            lang={lang}
           />
           {hasImages && (
             <>
@@ -58,6 +60,7 @@ export const pageQuery = graphql`
         slug
         title
         commentary
+        outOfStock
         bottle {
           childImageSharp {
             gatsbyImageData(width: 315, layout: FIXED)

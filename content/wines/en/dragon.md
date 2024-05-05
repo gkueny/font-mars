@@ -8,6 +8,7 @@ background: ../../assets/home-header.jpg
 mobileBackground: ../../assets/wines/dragon.png
 commentary: "Color : hick, garnet-red colour. Smell : Ripe fruit, liquorice. Mouth : Spicy, with body, rich."
 order: 5
+outOfStock: true
 slug: /en/dragon
 ---
 

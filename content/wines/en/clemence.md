@@ -7,11 +7,11 @@ bottle: ../../assets/wines/clemence-bottle.png
 background: ../../assets/vignes.jpg
 mobileBackground: ../../assets/wines/clemence-mobile.jpg
 commentary: "Color : Light rose, with sliver glints. Smell : Little, red and fresh berries, citrus fruits. Mouth : In harmony with the nose, pure and round final taste."
-order: 2
+order: 3
 slug: /en/clemence
 ---
 
-**Grape variety** : 100% Syrah. 
+**Grape variety** : 100% Syrah.
 
 **Harvest** : Red grapes are picked with full organoleptic maturity at the beginning of September, at night in order to
 preserve all their qualities of coolness.

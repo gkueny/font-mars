@@ -6,7 +6,7 @@ bottle: ../../assets/wines/malbec-bottle.png
 background: ../../assets/home-header.jpg
 mobileBackground: ../../assets/wines/malbec-mobile.jpg
 commentary: "Color: Deep garnet with violet highlights. Smell: Powerful grape variety, black fruit. Mouth: Spicy, tannic."
-order: 3
+order: 1
 slug: /en/malbec
 ---
 
