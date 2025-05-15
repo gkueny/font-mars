@@ -1,15 +1,16 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const Illustration = ({ imgFluid, inverted }) => (
+const Illustration = ({ imgFluid, inverted, className = "" }) => (
   <div
-    className={`illustratedtext-illustration ${
+    className={`illustratedtext-illustration ${className} ${
       inverted ? "lg:-ml-6" : "lg:-mr-6"
     }`}
   >
     <GatsbyImage
       image={imgFluid}
       className="h-full w-full shadow-md rounded-md"
+      objectFit="contain"
       alt=""
     ></GatsbyImage>
   </div>
@@ -20,9 +21,10 @@ const Text = ({
   inverted,
   displayOnlyOnDesktop = false,
   hideOnDesktop = false,
+  className = "",
 }) => (
   <div
-    className={`illustratedtext-text bg-white rounded-xl shadow-lg p-4 z-10 -mt-16 lg:p-12 lg:mt-0  ${
+    className={`illustratedtext-text bg-white rounded-xl shadow-lg p-4 z-10 -mt-16 lg:p-12 lg:mt-0  ${className} ${
       inverted ? "lg:-mr-6" : "lg:-ml-6"
     } ${displayOnlyOnDesktop ? "hidden lg:block" : ""} ${
       hideOnDesktop ? "lg:hidden" : ""
@@ -37,6 +39,8 @@ const IllustratedText = ({
   imgFluid,
   inverted = false,
   background = null,
+  illustrationClassName = "",
+  textClassName = "",
 }) => {
   return (
     <>
@@ -57,10 +61,18 @@ const IllustratedText = ({
           {background ? (
             background
           ) : (
-            <Illustration imgFluid={imgFluid} inverted={inverted} />
+            <Illustration
+              imgFluid={imgFluid}
+              inverted={inverted}
+              className={illustrationClassName}
+            />
           )}
 
-          <Text inverted={inverted} hideOnDesktop={inverted}>
+          <Text
+            inverted={inverted}
+            hideOnDesktop={inverted}
+            className={textClassName}
+          >
             {children}
           </Text>
         </article>

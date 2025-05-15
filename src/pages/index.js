@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import Hero from "../components/Hero";
 import Wines from "../components/Wines";
+import { PicnicCard } from "./picnic";
 
 const Home = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -17,6 +18,8 @@ const Home = ({ data, location }) => {
           <h2 className="relative break-words">Domaine Font-Mars</h2>
         </div>
       </Hero>
+
+      <PicnicCard imagePicnic={data.imagePicnic} />
 
       <h2 className="text-center text-4xl font-bold leading-10 p-24">
         NOS VINS
@@ -39,6 +42,11 @@ export const pageQuery = graphql`
     headerImage: file(absolutePath: { regex: "/home-header.jpg/" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    imagePicnic: file(absolutePath: { regex: "/picnic-2025.jpg/" }) {
+      childImageSharp {
+        gatsbyImageData(width: 600, height: 600, layout: FULL_WIDTH)
       }
     }
   }

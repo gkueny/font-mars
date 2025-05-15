@@ -29,13 +29,29 @@
   width: 100%;
   height: "20rem";
 }
+
+.illustratedtext-illustrationpicnic {
+  .gatsby-image-wrapper {
+    box-shadow: none;
+  }
+}
+
 @media (min-width: 1024px) {
   .illustratedtext-text {
     width: calc(100vh - 104px);
   }
+
+  .illustratedtext-text-picnic.lg\:-ml-6 {
+    margin-left: -0rem;
+  }
+
   .illustratedtext-illustration {
     width: calc(40% + 1.5rem);
     height: 100%;
+  }
+  .illustratedtext-illustration-picnic {
+    width: calc(70% + 1.5rem);
+    min-height: 100%;
   }
 }
 

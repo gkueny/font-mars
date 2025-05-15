@@ -74,6 +74,12 @@ const Header = ({ lang = "fr" }) => {
               {lang === "fr" ? "Location" : "Renting"}
             </Link>
             <Link
+              to={`/${lang === "en" ? "en/" : ""}picnic`}
+              className="block m-4 text-center lg:inline-block text-gray-800 hover:font-semibold"
+            >
+              {lang === "fr" ? "Pique-nique 2025" : "Picnic 2025"}
+            </Link>
+            <Link
               to={`/${lang === "en" ? "en/" : ""}nous-contacter`}
               className="block m-4 text-center lg:inline-block text-gray-800 hover:font-semibold"
             >
