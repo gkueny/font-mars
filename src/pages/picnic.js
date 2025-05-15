@@ -48,7 +48,10 @@ export const PicnicCard = ({ imagePicnic }) => {
 const Picnic = ({ data }) => {
   return (
     <Layout>
-      <Seo title="Picnic 2025" />
+      <Seo
+        title="Pique-nique 2025"
+        description="Rejoignez-nous au pique-nique des vignerons indépendants au CHATEAU FONT-MARS le DIMANCHE 8 JUIN 2025"
+      />
 
       <PicnicCard imagePicnic={data.imagePicnic} />
     </Layout>
