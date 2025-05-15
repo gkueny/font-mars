@@ -47,7 +47,7 @@ export const PicnicCard = ({ imagePicnic }) => {
 
 const Picnic = ({ data }) => {
   return (
-    <Layout>
+    <Layout lang="en">
       <Seo title="Picnic 2025" />
 
       <PicnicCard imagePicnic={data.imagePicnic} />
