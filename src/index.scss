@@ -98,17 +98,6 @@
 }
 
 
-@font-face {
-  font-family: "baunaus";
-  font-style: normal;
-  src: format("embedded-opentype"),
-    url("//content/fonts/Baunaus.woff") format("woff");
-}
-
-* {
-  font-family: "baunaus";
-}
-
 #contact-map {
   z-index: 0;
 }

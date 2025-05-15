@@ -101,13 +101,13 @@ const Header = ({ lang = "fr" }) => {
                 <img
                   className="h-4 pt-1"
                   alt="United States"
-                  src="http://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg"
+                  src="https://purecatamphetamine.github.io/country-flag-icons/3x2/US.svg"
                 />
               ) : (
                 <img
                   className="h-4 pt-1"
                   alt="United States"
-                  src="http://purecatamphetamine.github.io/country-flag-icons/3x2/FR.svg"
+                  src="https://purecatamphetamine.github.io/country-flag-icons/3x2/FR.svg"
                 />
               )}
             </button>
