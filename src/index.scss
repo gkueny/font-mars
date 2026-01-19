@@ -102,15 +102,6 @@
   z-index: 0;
 }
 
-.description {
-  width: 100%;
-}
-@media (min-width: 1024px) {
-  .description {
-    width: 65%;
-  }
-}
-
 .glide {
   @apply mb-24;
 

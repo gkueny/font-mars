@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const Commentary = ({ commentary, lang = "fr" }) => {
+const Commentary = ({ commentary, lang = "fr", bottle }) => {
   const data = useStaticQuery(graphql`
     query CommentaryQuery {
       avatar: file(absolutePath: { regex: "/jean-baptiste.jpg/" }) {
@@ -14,7 +14,7 @@ const Commentary = ({ commentary, lang = "fr" }) => {
   `);
 
   return (
-    <section className="relative m-auto z-30 max-w-lg px-8 lg:px-0 lg:m-0">
+    <section className="relative m-auto z-30 max-w-2xl px-8 lg:px-0 lg:m-0 justify-center">
       <div className="py-4 px-8 bg-white shadow-xl rounded-xl my-20 -mt-12 px-6 lg:mt-20">
         <div className="flex justify-center md:justify-end -mt-16">
           <GatsbyImage
@@ -24,16 +24,28 @@ const Commentary = ({ commentary, lang = "fr" }) => {
             imgStyle={{ borderRadius: "5rem" }}
           ></GatsbyImage>
         </div>
-        <div>
-          <h2 className="text-gray-800 text-xl font-semibold leading-8 lg:text-3xl">
-            {lang === "fr" ? "Commentaire de dégustation" : "Tasting notes"}
-          </h2>
-          <div className="mt-2 text-gray-700">
-            <ul>
-              {commentary.split(". ").map((commentarySplitted, i) => (
-                <li key={i}>{commentarySplitted}.</li>
-              ))}
-            </ul>
+        <div className="flex flex-col lg:flex-row lg:gap-12">
+          {bottle && (
+            <div className="w-full h-full hidden lg:block">
+              <GatsbyImage
+                image={bottle.childImageSharp.gatsbyImageData}
+                className="w-full h-full"
+                style={{ height: "300px" }}
+                imgStyle={{ objectFit: "contain" }}
+              />
+            </div>
+          )}
+          <div className="pt-4">
+            <h2 className="text-gray-800 text-xl font-semibold leading-8 lg:text-3xl">
+              {lang === "fr" ? "Commentaire de dégustation" : "Tasting notes"}
+            </h2>
+            <div className="mt-2 text-gray-700">
+              <ul>
+                {commentary.split(". ").map((commentarySplitted, i) => (
+                  <li key={i}>{commentarySplitted}.</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         <div className="flex justify-end mt-4">
