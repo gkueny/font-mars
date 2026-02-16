@@ -44,7 +44,7 @@ export const pageQuery = graphql`
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
-    imagePicnic: file(absolutePath: { regex: "/picnic-2025.jpg/" }) {
+    imagePicnic: file(absolutePath: { regex: "/picnic-2026.jpg/" }) {
       childImageSharp {
         gatsbyImageData(width: 600, height: 600, layout: FULL_WIDTH)
       }

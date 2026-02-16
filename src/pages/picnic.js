@@ -12,11 +12,11 @@ export const PicnicCard = ({ imagePicnic }) => {
       textClassName="illustratedtext-text-picnic"
     >
       <h2 className="text-gray-800 text-xl font-semibold leading-10 mb-8 lg:text-3xl text-center lg:text-left">
-        CHATEAU FONT-MARS - 8 JUIN 2025
+        CHATEAU FONT-MARS - 24 MAI 2026
       </h2>
       <p className="text-gray-900 text-lg mt-2 text-center lg:text-left">
         Rejoignez-nous au pique-nique des vignerons indépendants <br />
-        <b>DIMANCHE 8 JUIN 2025</b>
+        <b>DIMANCHE 24 MAI 2026</b>
       </p>
       <br />
       <p className="text-gray-900 text-lg mt-2 text-center lg:text-left">
@@ -49,8 +49,8 @@ const Picnic = ({ data }) => {
   return (
     <Layout>
       <Seo
-        title="Pique-nique 2025"
-        description="Rejoignez-nous au pique-nique des vignerons indépendants au CHATEAU FONT-MARS le DIMANCHE 8 JUIN 2025"
+        title="Pique-nique 2026"
+        description="Rejoignez-nous au pique-nique des vignerons indépendants au CHATEAU FONT-MARS le DIMANCHE 24 MAI 2026"
       />
 
       <PicnicCard imagePicnic={data.imagePicnic} />
@@ -62,7 +62,7 @@ export default Picnic;
 
 export const pageQuery = graphql`
   {
-    imagePicnic: file(absolutePath: { regex: "/picnic-2025.jpg/" }) {
+    imagePicnic: file(absolutePath: { regex: "/picnic-2026.jpg/" }) {
       childImageSharp {
         gatsbyImageData(width: 600, height: 600, layout: FULL_WIDTH)
       }
