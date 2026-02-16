@@ -33,7 +33,7 @@
     "gatsby-transformer-sharp": "^4.4.0",
     "intersection-observer": "^0.12.0",
     "leaflet": "^1.7.1",
-    "node-sass": "^7.0.1",
+    "sass": "^1.77.0",
     "prismjs": "^1.26.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -54,6 +54,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+  },
+  "overrides": {
+    "cheerio": "1.0.0-rc.12"
   },
   "scripts": {
     "build": "gatsby build",
