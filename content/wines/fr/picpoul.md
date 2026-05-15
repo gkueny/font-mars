@@ -2,7 +2,7 @@
 title: PICPOUL DE PINET
 description: AOP Appellation d’Origine Protégée Picpoul de Pinet
 image: ../../assets/wines/picpoul.jpg
-bottle: ../../assets/wines/picpoul-bottle.png
+bottle: ../../assets/wines/picpoul-bottle.jpg
 background: ../../assets/chateau.jpg
 mobileBackground: ../../assets/wines/picpoul.jpg
 commentary: "Robe : Or pâle, cristallin, reflet vert. Nez : Pêche blanche, arôme d’ananas, parfum de rose. Bouche : Vif, fruits exotiques en accord avec le nez."
